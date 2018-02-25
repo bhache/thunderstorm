@@ -55,7 +55,7 @@ public final class CompoundWaveletFilter implements IFilter {
         GrayScaleImage V2 = w2.filter(V1);
 
         result_F1 = subtract(input, GrayScaleImageImpl.convertToFloatProcessor(V1));
-        result_F2 = subtract(input, GrayScaleImageImpl.convertToFloatProcessor(V2));
+        result_F2 = subtract(GrayScaleImageImpl.convertToFloatProcessor(V1), GrayScaleImageImpl.convertToFloatProcessor(V2));
         result = GrayScaleImageImpl.convertToFloatProcessor(filter.filter(new GrayScaleImageImpl(image)));
         
         return result;
